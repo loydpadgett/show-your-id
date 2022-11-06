@@ -3,9 +3,6 @@
   hosts: "{{ target }}"
   vars_files:
     - ./vars/install_vars.yml
-  tasks:
-    - name: check for needed modules and software
-      dnf:
-        name: '{{ item.software }}'
-        state: "{{ item.state }}"
-      loop: "{{ install }}"
+  roles:
+  - role: ipaserver
+    state: present
