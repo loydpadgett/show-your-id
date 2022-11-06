@@ -1,0 +1,19 @@
+---
+sw:
+  - idm:DL1
+  - idm:DL1/server
+install:
+  - software: '@{{ sw }}'
+    state: present
+firewall_service:
+  - http
+  - https
+  - dns
+  - ntp
+  - freeipa-ldap
+  - freeipa-ldaps
+fw_cfg:
+  - service: "{{ firewall_service }}"
+    state: enabled
+    permanent: True
+    immediate: True
