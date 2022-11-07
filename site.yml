@@ -7,11 +7,12 @@
   pre_tasks:
     - name: set the firewall rules first
       import_tasks: firewall_config_verify.yml 
-      notify: install
 
   tasks:
     - name: import the install-server install tasks
-      import_tasks: install-server.yml
+      import_role: 
+        name: ./roles/ipaserver
 
     - name: import the install-client install tasks
-      import_tasks: install-client.yml
+      import_role: 
+        name: ./roles/ipaclient
