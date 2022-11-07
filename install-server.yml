@@ -1,0 +1,4 @@
+---
+tasks:
+  - role: ipaserver
+    state: present
