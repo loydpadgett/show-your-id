@@ -1,9 +1,7 @@
 ---
  - name: set firewalld for ipa
    ansible.posix.firewalld:
-     service: 
-       - http
-       - https
+     service: "{{ item.name }}"
      state: "{{ item.state }}"
      immediate: "{{ item.immediate }}"
      permanent: "{{ item.permanent }}"
