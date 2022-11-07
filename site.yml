@@ -6,13 +6,13 @@
 
   pre_tasks:
     - name: set the firewall rules first
-      import_tasks: firewall_config_verify.yml 
+      ansible.builtin.import_tasks: firewall_config_verify.yml 
 
   tasks:
     - name: import the install-server install tasks
-      import_role: 
+      ansible.builtin.import_role: 
         name: ./roles/ipaserver
 
     - name: import the install-client install tasks
-      import_role: 
+      ansible.builtin.import_role: 
         name: ./roles/ipaclient
