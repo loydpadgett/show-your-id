@@ -1,4 +1,3 @@
 ---
-tasks:
-  - role: ipaserver
-    state: present
+- role: ipaserver
+  state: present
