@@ -1,8 +1,11 @@
 ---
 - name: this playbook will install and configure freeIPA
-  hosts: "{{ target }}"
+  hosts: ipaserver,ipaclients
   vars_files:
     - ./vars/install_vars.yml
   roles:
   - role: ipaserver
+    state: present
+
+  - role: ipaclient
     state: present
