@@ -1,0 +1,14 @@
+---
+- hosts: all
+  vars:
+    network_connections:
+      - name: ens192
+        type: ethernet
+        ip:
+          dns:
+            - 10.10.30.252 
+          dns_search:
+            - l-org.lan
+  roles:
+    - rhel-system-roles.network
+...
