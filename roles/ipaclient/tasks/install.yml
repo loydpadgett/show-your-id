@@ -278,7 +278,7 @@
         hostname: "{{ result_ipaclient_test.hostname }}"
         sssd: "{{ result_ipaclient_test.sssd }}"
         force: "{{ ipaclient_force }}"
-        # on_master: "{{ ipaclient_on_master }}"
+        on_master: "{{ ipaclient_on_master }}"
       when: not ipaclient_on_master | bool
 
     - name: Install - IPA API calls for remaining enrollment parts
