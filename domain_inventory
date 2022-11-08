@@ -6,6 +6,8 @@ ipaserver_setup_dns=yes
 ipaserver_auto_forwarders=yes
 ipaserver_domain=l-org.lan
 ipaclient_mkhomedir=True
+ipaserver_no_host_dns=False
+ipaserver_mem_check=True
 ipaserver_realm=L-ORG.LAN
 
 [ipaclients]
@@ -19,3 +21,7 @@ ipaclient_use_otp=False
 [ipareplicas]
 dugout.l-org.lan
 bullpen.l-org.lan
+
+[ipareplicas:vars]
+ipaadmin_principal=admin
+ipareplica_domain=l-org.lan
