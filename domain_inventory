@@ -11,17 +11,19 @@ ipaserver_mem_check=True
 ipaserver_realm=L-ORG.LAN
 
 [ipaclients]
-mezzanine.l-org.lan
+dugout2.l-org.lan
 dugout.l-org.lan
-bullpen.l-org.lan
 
 [ipaclients:vars]
 ipaclient_use_otp=False
 
 [ipareplicas]
 dugout.l-org.lan
-bullpen.l-org.lan
+dugout2.l-org.lan
+bullpen.l-org.lan ipareplica_servers=dugout.l-org.lan
 
 [ipareplicas:vars]
 ipaadmin_principal=admin
 ipareplica_domain=l-org.lan
+ipaserver_setup_dns=yes
+ipareplica_no_forwarders=yes
