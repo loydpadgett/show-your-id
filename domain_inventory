@@ -1,0 +1,15 @@
+[ipaserver]
+mezzanine.l-org.lan
+
+[ipaserver:vars]
+ipaserver_setup_dns=yes
+ipaserver_auto_forwarders=yes
+ipaserver_domain=l-org.lan
+ipaclient_mkhomedir=True
+ipaserver_realm=L-ORG.LAN
+
+[ipaclients]
+scoreboard.l-org.lan
+
+[ipaclients:vars]
+ipaclient_use_otp=True

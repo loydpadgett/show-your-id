@@ -1,0 +1,8 @@
+---
+ - name: set firewalld for ipa
+   ansible.posix.firewalld:
+     service: "{{ item.name }}"
+     state: "{{ item.state }}"
+     immediate: "{{ item.immediate }}"
+     permanent: "{{ item.permanent }}"
+   loop: "{{ firewall_cmd }}"
