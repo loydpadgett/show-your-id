@@ -65,8 +65,8 @@
 - name: Install - Replica installation test
   ipareplica_test:
     ### basic ###
-    # dm_password: "{{ ipadm_password | default(omit) }}"
-    # password: "{{ ipaadmin_password | default(omit) }}"
+    dm_password: "{{ ipadm_password | default(omit) }}"
+    password: "{{ ipaadmin_password | default(omit) }}"
     ip_addresses: "{{ ipareplica_ip_addresses | default([]) }}"
     domain: "{{ ipareplica_domain | default(ipaserver_domain) |
             default(omit) }}"
