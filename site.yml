@@ -1,9 +1,0 @@
----
-- name: run the server install
-  ansible.builtin.import_playbook: install-server.yml
-
-- name: run the client ipa install. 
-  ansible.builtin.import_playbook: install-client.yml
-
-- name: run the replica install. 
-  ansible.builtin.import_playbook: install-replica.yml
