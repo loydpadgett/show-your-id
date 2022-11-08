@@ -1,3 +1,9 @@
 ---
-import_role:
-  name: ./roles/ipaclient
+- name: install client
+  hosts: ipaclients
+  vars_files:
+    - ./vars/install_vars.yml
+  tasks:
+    - name: install ipa clients
+      import_role:
+        name: ipaclient

@@ -1,18 +1,9 @@
 ---
-- name: run the entire ipa install. 
-  hosts: ipaserver
-  vars_files:
-    - ./vars/install_vars.yml
+- name: run the server install
+  ansible.builtin.import_playbook: install-server.yml
 
-  pre_tasks:
-    - name: set the firewall rules first
-      ansible.builtin.import_tasks: firewall_config_verify.yml 
+- name: run the client ipa install. 
+  ansible.builtin.import_playbook: install-client.yml
 
-  tasks:
-    - name: import the install-server install tasks
-      ansible.builtin.import_role: 
-        name: ./roles/ipaserver
-
-    - name: import the install-client install tasks
-      ansible.builtin.import_role: 
-        name: ./roles/ipaclient
+- name: run the replica install. 
+  ansible.builtin.import_playbook: install-replica.yml
