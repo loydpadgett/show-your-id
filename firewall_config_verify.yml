@@ -1,8 +1,13 @@
 ---
- - name: set firewalld for ipa
-   ansible.posix.firewalld:
-     service: "{{ item.name }}"
-     state: "{{ item.state }}"
-     immediate: "{{ item.immediate }}"
-     permanent: "{{ item.permanent }}"
-   loop: "{{ firewall_cmd }}"
+- name: set firewall for replica and server
+  hosts: ipaserver,ipaclients,ipareplicas
+  vars_files:
+    - ./vars/install_vars.yml
+  tasks:
+    - name: set firewalld for ipa
+      ansible.posix.firewalld:
+        service: "{{ item.name }}"
+        state: "{{ item.state }}"
+        immediate: "{{ item.immediate }}"
+        permanent: "{{ item.permanent }}"
+      loop: "{{ firewall_cmd }}"
