@@ -19,8 +19,7 @@ ipaclient_use_otp=False
 
 [ipareplicas]
 dugout.l-org.lan
-dugout2.l-org.lan
-bullpen.l-org.lan ipareplica_servers=dugout.l-org.lan
+dugout2.l-org.lan ipareplica_servers=dugout.l-org.lan
 
 [ipareplicas:vars]
 ipaadmin_principal=admin

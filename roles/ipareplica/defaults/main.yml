@@ -9,7 +9,7 @@ ipareplica_mem_check: yes
 ### server ###
 ipareplica_setup_adtrust: no
 ipareplica_setup_ca: yes
-ipareplica_setup_kra: yes
+ipareplica_setup_kra: no
 ipareplica_setup_dns: yes
 ipareplica_no_pkinit: no
 ipareplica_no_ui_redirect: no

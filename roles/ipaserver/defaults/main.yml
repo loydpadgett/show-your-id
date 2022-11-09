@@ -13,7 +13,7 @@ ipaserver_no_ui_redirect: no
 ipaserver_mem_check: yes
 ### ssl certificate ###
 ### client ###
-ipaclient_mkhomedir: no
+ipaclient_mkhomedir: yes
 ipaclient_no_ntp: no
 #ipaclient_ssh_trust_dns: no
 #ipaclient_no_ssh: no
