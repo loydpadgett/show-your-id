@@ -13,9 +13,12 @@ ipaserver_realm=L-ORG.LAN
 [ipaclients]
 dugout2.l-org.lan
 dugout.l-org.lan
+sh-runner.l-org.lan 
+lprom.l-org.lan
 
 [ipaclients:vars]
 ipaclient_use_otp=False
+ipaclient_install_packages=True
 
 [ipareplicas]
 dugout.l-org.lan
