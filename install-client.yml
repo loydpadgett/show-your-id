@@ -1,9 +1,30 @@
 ---
 - name: install client
-  hosts: ipaclients
+  hosts: lprom.l-org.lan
   vars_files:
     - ./vars/install_vars.yml
     - ./vars/client_vars.yml
+  pre_tasks:
+    - name: create a conditional workflow
+      block:
+      - name: install with yum module if running RedHat
+        yum:
+          name: python38-pip.noarch
+          state: present
+        changed_when: ansible_facts["distribution"] == 'RedHat'
+
+      rescue:
+      - name: install with apt module if running Ubuntu
+        apt:
+          name: pip
+          state: present
+        changed_when: ansible_facts["distribution"] == 'Ubuntu'
+
+      always:
+      - name: make sure the ipapython library is installed.
+        ansible.builtin.pip:
+          name: ipapython
+          state: present
   tasks:
     - name: install ipa clients
       import_role:

@@ -1,9 +1,14 @@
 ---
 - name: set firewall for replica and server
-  hosts: ipaserver,ipaclients,ipareplicas
+  hosts: ipaclients
   vars_files:
     - ./vars/install_vars.yml
   tasks:
+    - name: make sure firewalld is installed
+      ansible.builtin.yum:
+        name: firewalld
+        state: present
+      
     - name: set firewalld for ipa
       ansible.posix.firewalld:
         service: "{{ item.name }}"
