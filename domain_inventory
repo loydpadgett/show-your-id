@@ -16,10 +16,6 @@ dugout.l-org.lan
 sh-runner.l-org.lan 
 lprom.l-org.lan
 
-[ipaclients:vars]
-ipaclient_use_otp=False
-ipaclient_install_packages=True
-
 [ipareplicas]
 dugout.l-org.lan
 dugout2.l-org.lan ipareplica_servers=dugout.l-org.lan
