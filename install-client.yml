@@ -1,6 +1,6 @@
 ---
 - name: install client
-  hosts: lprom.l-org.lan
+  hosts: ipaclients
   vars_files:
     - ./vars/install_vars.yml
     - ./vars/client_vars.yml
